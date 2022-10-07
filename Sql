@@ -8,3 +8,14 @@ SELECT name, head_coach FROM teams WHERE conference = 'AFC' AND division = 'East
 SELECT * FROM players ORDER BY salary DESC LIMIT 50;
 SELECT AVG(salary) FROM players;
 SELECT name, position FROM players WHERE salary > 10000000;
+
+
+SELECT * FROM players ORDER BY salary DESC LIMIT 1;
+SELECT name, position FROM players ORDER BY salary ASC LIMIT 100;
+SELECT AVG(salary) FROM players WHERE position = 'DE';
+SELECT * FROM players JOIN teams ON players.team_id = teams.id WHERE teams.name = 'Buffalo Bills';
+SELECT players.name, teams.name FROM players, teams WHERE players.team_id=teams.id AND teams.name LIKE 'Buffalo Bills';
+
+SELECT SUM(salary) FROM players JOIN teams ON players.team_id = teams.id WHERE teams.name = 'New York Giants';
+SELECT * FROM players JOIN teams ON players.team_id = teams.id WHERE teams.name = 'Green Bay Packers' ORDER BY salary ASC LIMIT 1;
+
